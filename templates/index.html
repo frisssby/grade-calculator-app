@@ -1,0 +1,12 @@
+<form action="/grades" method="POST">
+    <label for="course-choice">Введите название курса:</label>
+    <input list="course-names" id="course-choice" name="course-choice">
+    <input type="submit" value="Выбрать">
+</form>
+
+
+<datalist id="course-names">
+    {% for name in course_names %}
+    <option value="{{ name }}">
+        {% endfor %}
+</datalist>
