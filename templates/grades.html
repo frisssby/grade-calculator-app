@@ -1,0 +1,11 @@
+<a href="{{ course_link }}"> <b> {{ course_name }} </b> </a>
+<form action="/result" method="POST">
+    <p>Введите оценки:</p>
+    {% for name in mark_names %}
+    <label for="{{ name }}">{{ name }}</label>
+    <input id="{{ name }}" type="number" step='0.001' name="{{ name }}" required>
+    <br>
+    {% endfor %}
+    <input type="submit" value="Рассчитать итог">
+    <input name="{{ course_name }}" type="hidden" value="{{ course_name }}">
+</form>
